@@ -128,7 +128,7 @@ body::before {
 
 .mv {
   position: relative;
-  height: clamp(334px , calc(650/1512*100vw) , 650px);
+  height: clamp(334px , calc(650/1512*100vw) , 655px);
   overflow: hidden;
 }
 
@@ -331,7 +331,6 @@ body::before {
 
 .flow-title {
   min-height: 70px;
-
   font-size: 18px;
 }
 
@@ -558,18 +557,18 @@ body::before {
 
 /* MV */
 .mv {
-  height: 630px;
+  height: 655px;
 }
 
 .item02 {
   width: 70%;
-  top: 130px;
+  top: 150px;
   left: 4%;
 }
 
 .item01 {
   width: 82%;
-  top: 295px;
+  top: 310px;
   left: 10%;
 }
 
@@ -581,8 +580,8 @@ body::before {
 
 .item04 {
   width: 55%;
-  bottom: 130px;
-  left: 2%;
+  bottom: 70px;
+  left: 5%;
 }
 
 .mv-text {
