@@ -3,7 +3,7 @@
 body {
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
-  color: #002b3f;
+  color: #333333;
   background: #eee;
   overflow-y: auto;
 }
@@ -20,12 +20,16 @@ body::before {
 }
 
 .layout {
-  width: calc(100% - 120px);
-  max-width: 1512px;
-  margin: 25px auto;
+  width: auto;
+  margin: 40px;
 
   display: flex;
   background: #fff;
+}
+
+/* スマホでは非表示 */
+.sp-header {
+  display: none;
 }
 
 /* サイドバー */
@@ -34,7 +38,7 @@ body::before {
   flex-shrink: 0;
   min-height: auto;
   padding: 40px 30px;
-  border-right: 15px solid #eee;
+  border-right: 25px solid #eee;
 
   position: sticky;
   top: 25px;
@@ -72,19 +76,19 @@ body::before {
 
   padding: 14px 0;
   
-  border-top: 1px solid #ddd;
+  border-top: 0.5px solid #6B7280;
   color: #002b3f;
   text-decoration: none;
   font-weight: bold;
 }
 
 .sidebar nav a:last-child {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 0.5px solid #6B7280;
 }
 
 .sidebar nav .nav-icon {
-  width: 35px;
-  height: 35px;
+  width: 26.5px;
+  height: 26.5px;
   object-fit: cover;
 }
 
@@ -94,8 +98,8 @@ body::before {
 
 .sns a {
   display: block;
-  font-size: 12px;
-  color: #999;
+  font-size: 14px;
+  color: #B3B3B3;
   margin-bottom: 8px;
 }
 
@@ -105,13 +109,14 @@ body::before {
 }
 
 .section h2 {
-  font-size: 32px;
+  font-size: 36px;
   margin: 0;
 }
 
 .section > p {
-  margin-top: 7px;
-  font-size: 20px;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #6B7280;
 }
 
 /* メイン */
@@ -123,7 +128,7 @@ body::before {
 
 .mv {
   position: relative;
-  height: 650px;
+  height: clamp(334px , calc(650/1512*100vw) , 650px);
   overflow: hidden;
 }
 
@@ -157,7 +162,7 @@ body::before {
 /* メイン */
 .item01 {
   width: 47%;
-  top: 150px;
+  top: 130px;
   left: 20%;
   z-index: 4;
   animation-delay: 1.1s;
@@ -209,25 +214,6 @@ body::before {
   }
 }
 
-/* タイトル */
-.mv-text {
-  position: absolute;
-  right: 5%;
-  bottom: 10px;
-  text-align: right;
-  z-index: 10;
-}
-
-.mv-text h2 {
-  margin: 0;
-  font-size: 64px;
-  line-height: 1;
-}
-
-.mv-text p {
-  margin-top: 10px;
-  font-size: 16px;
-}
 
 /* アニメーション */
 @keyframes fadeIn {
@@ -242,20 +228,24 @@ body::before {
   }
 }
 
+/* タイトル */
+
 .mv-text {
   position: absolute;
   right: 55px;
   bottom: 15px;
   text-align: right;
+  z-index: 10;
 }
 
 .mv-text h2 {
-  font-size: 46px;
-  margin: 0;
+  font-size: 48px;
+  line-height: 1;
 }
 
 .mv-text p {
-  font-size: 14px;
+  margin-top: 10px;
+  font-size: 16px;
 }
 
 /* Works */
@@ -291,23 +281,21 @@ body::before {
 /* Flow */
 .flow-list {
   display: flex;
-  gap: 35px;
+  gap: 30px;
   margin-top: 30px;
   margin-bottom: 20px;
   align-items: stretch;
-
-  justify-content: center;
 }
 
 .flow-card {
-  width: 150px;
+  width: 190px;
   height: 400px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  padding: 15px 25px;
+  padding: 15px 20px;
   border: 1px solid #ddd;
   text-align: center;
   background: #fff;
@@ -322,7 +310,7 @@ body::before {
   border-radius: 50%;
 
   color: #fff;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: bold;
 
   display: flex;
@@ -333,8 +321,8 @@ body::before {
 }
 
 .flow-icon {
-  width: 90px;
-  height: 90px;
+  width: 92px;
+  height: 92px;
 
   font-weight: bold;
 
@@ -344,14 +332,14 @@ body::before {
 .flow-title {
   min-height: 70px;
 
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .flow-text {
   width: 100px;
   min-height: 110px;
 
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 200;
 }
 
@@ -360,7 +348,7 @@ body::before {
   margin-bottom: 10px;
 
   font-weight: 200;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .day-icon {
@@ -369,26 +357,25 @@ body::before {
   object-fit: contain;
 }
 
-/* 装飾帯 */
-.deco {
-  height: 122px;
-  background: url("../img/sosyoku.png") center / cover no-repeat;
-}
-
 /* Profile */
 .profile-box {
   display: flex;
-  gap: 64px;
-  align-items: center;
+  gap: 30px;
+  align-items: flex-start;
   margin-top: 30px;
 }
 
 .profile-box img {
-  width: 320px;
+  width: 436px;
+  height: 270px;
 }
 
 .profile-box h3 {
-  margin-bottom: 15px;
+  margin-bottom: 24px;
+}
+
+.profile-box p {
+  margin-top: 15px;
 }
 
 /* Contact */
@@ -401,6 +388,10 @@ form {
 .form-row {
   display: flex;
   gap: 20px;
+}
+
+.form-group {
+  font-size: 14px;
 }
 
 input,
@@ -418,7 +409,7 @@ textarea {
 button {
   display: block;
   width: 600px;
-  margin: 10px auto 0;
+  margin: 0 auto 0;
   border: none;
   border-radius: 999px;
   padding: 16px;
@@ -472,4 +463,349 @@ button {
   border-radius: 999px;
   text-decoration: none;
   font-weight: bold;
+}
+
+
+/* =====================
+   SP / smartphone
+===================== */
+@media screen and (max-width: 1020px) {
+
+body {
+  background: #eee;
+}
+
+body::before {
+  display: none;
+}
+
+.layout {
+  width: auto;
+  margin: 16px;
+  display: block;
+  background: #fff;
+}
+
+/* PCサイドバー非表示 */
+.sidebar {
+  display: none;
+}
+
+/* スマホヘッダー */
+.sp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 15px;
+  background: #fff;
+}
+
+.sp-logo {
+  margin: 0;
+
+  font-size: 19px;
+  font-weight: 700;
+  color: #002b3f;
+}
+
+.sp-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact-btn {
+  display: inline-block;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  background: #B3C100;
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.menu-btn {
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  cursor: pointer;
+}
+
+.menu-btn span {
+  display: block;
+
+  width: 36px;
+  height: 2px;
+
+  background: #FF755B;
+}
+
+.main {
+  overflow: visible;
+}
+
+/* MV */
+.mv {
+  height: 630px;
+}
+
+.item02 {
+  width: 70%;
+  top: 130px;
+  left: 4%;
+}
+
+.item01 {
+  width: 82%;
+  top: 295px;
+  left: 10%;
+}
+
+.item03 {
+  width: 65%;
+  top: 215px;
+  right: 4%;
+}
+
+.item04 {
+  width: 55%;
+  bottom: 130px;
+  left: 2%;
+}
+
+.mv-text {
+  right: 0;
+  left: 0;
+  top: 35px;
+  text-align: center;
+}
+
+.mv-text h2 {
+  font-size: 26px;
+}
+
+.mv-text p {
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+/* 共通 */
+.section {
+  padding: 45px 16px 35px;
+}
+
+.section h2 {
+  font-size: 24px;
+}
+
+.section > p {
+  font-size: 12px;
+  margin-top: 10px;
+  color: #6B7280;
+}
+
+/* Works */
+.works-grid {
+  display: block;
+  margin-top: 22px;
+}
+
+.works-grid article {
+  margin-bottom: 28px;
+}
+
+.works-grid h3 {
+  font-size: 11px;
+}
+
+.works-grid p {
+  font-size: 10px;
+}
+
+/* Flow */
+.flow-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  margin-top: 24px;
+  padding-bottom: 50px;
+}
+
+.flow-list::before {
+  content: "";
+  position: absolute;
+  top: 126px;
+  bottom: 18px;
+  left: 50%;
+  width: 3px;
+  background: #ff715f;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.flow-list::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 22px;
+  height: 22px;
+  border-right: 4px solid #ff715f;
+  border-bottom: 4px solid #ff715f;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.flow-card {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: 34px 90px 1fr;
+  align-items: center;
+  column-gap: 18px;
+
+  width: auto;
+  height: auto;
+  padding: 20px 18px;
+
+  border: 1px solid #ddd;
+  background: #fff;
+  text-align: left;
+}
+
+.flow-content {
+  flex: 1;
+}
+
+.flow-number {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  font-size: 14px;
+}
+
+.flow-icon {
+  width: 82px;
+  height: 82px;
+  margin: 0;
+}
+
+.flow-title {
+  min-height: auto;
+  margin: 0 0 8px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.flow-text {
+  width: auto;
+  min-height: auto;
+  margin: 0 0 8px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.flow-day {
+  margin: 0;
+  font-size: 13px;
+}
+
+/* Profile */
+.profile-box {
+  display: block;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.profile-box img {
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-box h3 {
+  font-size: 20px;
+  margin: 18px 0 18px;
+}
+
+.profile-box p {
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: left;
+}
+
+/* Contact */
+form {
+  padding: 16px;
+}
+
+.form-row {
+  display: block;
+}
+
+input,
+textarea {
+  box-sizing: border-box;
+  padding: 12px;
+  font-size: 11px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.or-line {
+  font-size: 16px;
+  gap: 16px;
+}
+
+.line-box {
+  display: block;
+  text-align: center;
+  padding: 14px;
+}
+
+.line-icon {
+  width: 55px;
+  height: 55px;
+}
+
+.line-text h3 {
+  font-size: 18px;
+  margin: 8px 0 4px;
+}
+
+.line-text p {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.line-box a {
+  display: block;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  }
+
+footer {
+  font-size: 10px;
+  text-align: center;
+  padding: 20px 0;
+}
 }
