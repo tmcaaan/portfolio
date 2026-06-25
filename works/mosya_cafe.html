@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tomofolio</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <div class="layout">
+
+    <!-- スマホ用ヘッダー -->
+    <header class="sp-header">
+    <p class="sp-logo"><a href="../index.html">Nakano Tomoka</a></p>
+
+    <div class="sp-right">
+      <a href="../index.html#contact" class="contact-btn">Contact</a>
+        <button class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    <!-- ハンバーガーメニューのナビゲーション -->
+      <nav id="hamburger-navigation">
+      <div class="hamburger-sidebar">
+      <h1><a href="../index.html">PORTFOLIO</a></h1>
+      <img src="../img/me.png" alt="" class="img-me">
+      <p>Tomoka Nakano</p>
+
+      <nav>
+        <a href="../index.html#works">
+          <img src="../img/icon_heart.png" alt="" class="nav-icon">Works</a>
+        <a href="../index.html#flow">
+          <img src="../img/icon_flow.png" alt="" class="nav-icon">Flow</a>
+        <a href="../index.html#profile">
+          <img src="../img/icon_profile.png" alt="" class="nav-icon">Profile</a>
+        <a href="../index.html#contact">
+          <img src="../img/icon_mail.png" alt="" class="nav-icon">Contact</a>
+      </nav>
+
+      <div class="sns">
+        <a href="https://lin.ee/RsbOYy9">公式LINE</a>
+        <a href="#">Instagram</a>
+      </div>
+      </div>
+    </header>
+
+    <!-- 左サイドバー -->
+    <aside class="sidebar">
+      <h1><a href="../index.html">PORTFOLIO</a></h1>
+      <img src="../img/me.png" alt="" class="img-me">
+      <p>Tomoka Nakano</p>
+
+      <nav>
+        <a href="../index.html#works">
+          <img src="../img/icon_heart.png" alt="" class="nav-icon">Works</a>
+        <a href="../index.html#flow">
+          <img src="../img/icon_flow.png" alt="" class="nav-icon">Flow</a>
+        <a href="../index.html#profile">
+          <img src="../img/icon_profile.png" alt="" class="nav-icon">Profile</a>
+        <a href="../index.html#contact">
+          <img src="../img/icon_mail.png" alt="" class="nav-icon">Contact</a>
+      </nav>
+
+      <div class="sns">
+        <a href="https://lin.ee/RsbOYy9">公式LINE</a>
+        <a href="#">Instagram</a>
+      </div>
+    </aside>
+
+
+    <!-- メイン -->
+    <main class="main work-detail">
+
+      <section class="section work-detail-head">
+        <h2>Works</h2>
+        <p>制作物</p>
+
+        <div class="work-title-box">
+          <p>WEB制作</p>
+          <h3>カフェサイト</h3>
+          <span>URLURLURL</span>
+        </div>
+      </section>
+
+      <section class="work-visual">
+        <img src="../img/mosya_cafe.png" alt="">
+      </section>
+
+      <section class="work-detail-body">
+
+        <div class="work-block">
+          <h3>制作概要</h3>
+          <p>
+            既存サイトを参考にHTML/CSSを用いて再現制作しました。<br>
+            レイアウト構築やレスポンシブ対応、余白設計などを意識しながらコーディングを行い、デザインの再現性を高めることを目的として制作しました。
+          </p>
+        </div>
+
+        <div class="work-block">
+          <h3>制作期間</h3>
+          <p>
+            コーディング　約２週間
+          </p>
+        </div>
+
+        <div class="work-design">
+          <h3>完成デザイン</h3>
+
+          <div class="work-design-images">
+            <img src="../img/mosya_cafe-pc.webp" alt="">
+            <img src="../img/mosya_cafe-sp.webp" alt="">
+          </div>
+        </div>
+
+        <div class="work-nav">
+
+          <a href="mosya_sneakers.html" class="work-prev">
+            <span></span>
+            Previous
+          </a>
+
+          <a href="myportfolio.html" class="work-next">
+            Next
+            <span></span>
+          </a>
+
+        </div>
+
+        <a href="../index.html" class="home-btn">HOME</a>
+
+      </section>
+
+      <footer>©︎Tomoka Nakano PORTFOLIO</footer>
+
+    </main>
+  </div>
+
+  <script>
+  const hamburger = document.querySelector('.hamburger-menu');
+  const nav = document.querySelector('#hamburger-navigation');
+
+  hamburger.addEventListener('click', function () {
+    hamburger.classList.toggle('active');
+    nav.classList.toggle('active');
+  });
+  </script>
+
+
+</body>
+</html>
+  
+</body>

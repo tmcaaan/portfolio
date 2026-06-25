@@ -12,21 +12,51 @@
   <div class="layout">
     <!-- スマホ用ヘッダー -->
     <header class="sp-header">
-    <p class="sp-logo">Nakano Tomoka</p>
+    <p class="sp-logo"><a href="index.html">Nakano Tomoka</a></p>
 
-    <div class="sp-right">
-      <a href="#contact" class="contact-btn">Contact</a>
-        <button class="menu-btn">
+      <div class="sp-right">
+       <a href="#contact" class="contact-btn">Contact</a>
+        <button class="hamburger-menu">
           <span></span>
           <span></span>
           <span></span>
         </button>
       </div>
+
+<!-- ハンバーガーメニューのナビゲーション -->
+<div id="hamburger-navigation">
+  <div class="hamburger-sidebar">
+    <h1><a href="index.html">PORTFOLIO</a></h1>
+    <img src="img/me.png" alt="" class="img-me">
+    <p>Tomoka Nakano</p>
+
+    <nav>
+      <a href="#works">
+        <img src="img/icon_heart.png" alt="" class="nav-icon">Works
+      </a>
+      <a href="#flow">
+        <img src="img/icon_flow.png" alt="" class="nav-icon">Flow
+      </a>
+      <a href="#profile">
+        <img src="img/icon_profile.png" alt="" class="nav-icon">Profile
+      </a>
+      <a href="#contact">
+        <img src="img/icon_mail.png" alt="" class="nav-icon">Contact
+      </a>
+    </nav>
+
+    <div class="sns">
+      <a href="https://lin.ee/RsbOYy9" target="_blank">公式LINE</a>
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+</div>
+
     </header>
 
     <!-- 左サイドバー -->
     <aside class="sidebar">
-      <h1>PORTFOLIO</h1>
+      <h1><a href="index.html">PORTFOLIO</a></h1>
       <img src="img/me.png" alt="" class="img-me">
       <p>Tomoka Nakano</p>
 
@@ -42,7 +72,7 @@
       </nav>
 
       <div class="sns">
-        <a href="#">公式LINE</a>
+        <a href="https://lin.ee/RsbOYy9" target="_blank">公式LINE</a>
         <a href="#">Instagram</a>
       </div>
     </aside>
@@ -78,27 +108,35 @@
 
         <div class="works-grid">
           <article>
-            <img src="img/website01.png" alt="">
-            <h3>タイトルタイトルタイトル</h3>
-            <p>coding / sass / aaa</p>
+            <a href="works/mosya_flower.html" class="work-link">
+              <img src="img/website01.png" alt="">
+              <h3>イベントサイト</h3>
+              <p>coding</p>
+            </a>
           </article>
 
           <article>
-            <img src="img/website02.png" alt="">
-            <h3>タイトルタイトルタイトル</h3>
-            <p>coding / sass / aaa</p>
+            <a href="works/mosya_sneakers.html" class="work-link">
+              <img src="img/website02.png" alt="">
+              <h3>商品販売サイト</h3>
+              <p>coding</p>
+            </a>
           </article>
 
           <article>
-            <img src="img/website03.png" alt="">
-            <h3>タイトルタイトルタイトル</h3>
-            <p>coding / sass / aaa</p>
+            <a href="works/mosya_cafe.html" class="work-link">
+              <img src="img/website03.png" alt="">
+              <h3>カフェサイト</h3>
+              <p>coding</p>
+            </a>
           </article>
 
           <article>
-            <img src="img/work04.jpg" alt="">
-            <h3>タイトルタイトルタイトル</h3>
-            <p>coding / sass / aaa</p>
+            <a href="works/myportfolio.html" class="work-link">
+              <img src="img/website04.png" alt="">
+              <h3>ポートフォリオサイト</h3>
+              <p>coding / design </p>
+            </a>
           </article>
         </div>
       </section>
@@ -107,7 +145,7 @@
         <h2>Flow</h2>
         <p>ご依頼の流れ</p>
 
-        <p>お問い合わせ後、ヒアリングから納品までの流れをご案内します。</p>
+        <p class="explanation">お問い合わせ後、ヒアリングから納品までの流れをご案内します。</p>
 
         <div class="flow-list">
 
@@ -206,35 +244,43 @@
         <h2>CONTACT</h2>
         <p>お問い合わせ</p>
 
-        <form>
+        <p class="explanation">
+          ポートフォリオをご覧いただきありがとうございます！<br>
+          Web制作のご相談やご依頼など、お気軽にお問い合わせください。<br>
+          内容を確認後、2日以内にご返信いたします。
+        </p>
+
+
+      <form action="https://formspree.io/f/mbdvdldr" method="POST">
+
         <div class="form-group">
-          <label for="name">お名前</label>
-          <input type="text" id="name">
+          <label for="name">お名前<span class="required">※</span></label>
+          <input type="text" id="name" name="name" required>
         </div>
 
         <div class="form-group">
           <label for="kana">フリガナ</label>
-          <input type="text" id="kana">
+          <input type="text" id="kana" name="kana">
         </div>
 
         <div class="form-group">
           <label for="company">会社名</label>
-          <input type="text" id="company">
+          <input type="text" id="company" name="company">
         </div>
 
         <div class="form-group">
-          <label for="mail">メールアドレス</label>
-          <input type="email" id="mail">
+          <label for="mail">メールアドレス<span class="required">※</span></label>
+          <input type="email" id="mail" name="email" required>
         </div>
 
         <div class="form-group">
-          <label for="message">お問い合わせ内容</label>
-          <textarea id="message"></textarea>
+          <label for="message">お問い合わせ内容<span class="required">※</span></label>
+          <textarea id="message" name="message" required></textarea>
         </div>
-        
-        <button>送信する</button>
-        
-        </form>
+
+        <button type="submit">送信する</button>
+
+      </form>
 
         <div class="or-line">
           <span>OR</span>
@@ -246,14 +292,29 @@
             <h3>LINEでもご相談いただけます！</h3>
             <p>お急ぎの場合や、ちょっとしたご相談も大歓迎です。<br>お気軽にご連絡ください。</p>
           </div>
-          <a href="#">LINEで相談する</a>
+          <a href="https://lin.ee/QVRQibV" target="_blank" rel="noopener noreferrer" class="line-button">
+            LINEで相談する
+          </a>
+          
         </div>
       </section>
 
 
       <footer>©︎Tomoka Nakano PORTFOLIO</footer>
+
     </main>
   </div>
   
+  <script>
+  const hamburger = document.querySelector('.hamburger-menu');
+  const nav = document.querySelector('#hamburger-navigation');
+
+  hamburger.addEventListener('click', function () {
+    hamburger.classList.toggle('active');
+    nav.classList.toggle('active');
+  });
+  </script>
+
+
 </body>
 </html>
