@@ -55,6 +55,7 @@ body::before {
   position: sticky;
   top: 25px;
   height: calc(100vh - 25px);
+  overflow-y: scroll;
 }
 
 .sidebar h1 {
@@ -602,6 +603,8 @@ footer {
     opacity: 0;
     visibility: hidden;
     transition: .4s;
+
+    overflow-y: scroll;
   }
 
   #hamburger-navigation.active {
